@@ -1,5 +1,7 @@
 <?php
 
+
+/* TOIMIIIII!
 try {
     $yhteys = new PDO("mysql:host=localhost;dbname=t7aaju00", "t7aaju00",
    "salasana");
@@ -16,6 +18,8 @@ try {
    $_POST["oj"] ));
    //Yhteyden poistaminen. Ei välttämättä tarvita
    $yhteys = null;
+
+   
    
 
 
@@ -23,10 +27,10 @@ try {
 
 
 
-    /*$host = 'localhost';
+    $host = 'localhost';
     $dbname = 't7aaju00';
     $username = 't7aaju00';
-    $password = 'salasana';
+    $password = 'salasana';*/
 
     try
     {
@@ -45,11 +49,14 @@ try {
     $yhteys ->exec ("SET NAMES latin1");
 
     //valmistellaan proseduuri
+
+    $proseduuri = $yhteys->prepare("CALL UusiSuoritus(?, ?, ?, ?)");
     $proseduuri =$yhteys -> prepare("CALL UusiSuoritus($_POST["etun"], $_POST["sukun"], $_POST["oj"], $_POST["as"])";
 
     //Suoritetaan valmisteltu proserduuri
 
-    $proseduuri -> execute();
+    $proseduuri -> execute(array($_POST["etun"], $_POST["sukun"],$_POST["oj"],
+    $_POST["as"] ));
 
     $yhteys = null;
 
