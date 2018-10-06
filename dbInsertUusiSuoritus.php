@@ -12,8 +12,8 @@ try {
    $yhteys->exec("SET NAMES latin1");
    $kysely = $yhteys->prepare("INSERT INTO Opiskelija
    (Etunimi,Sukunimi,Osoite,Luokkatunnus) VALUES (?, ?, ?, ?)");
-   $kysely->execute(array($_POST["etun"], $_POST["sukun"],$_POST["os"],
-   $_POST["lt"] ));
+   $kysely->execute(array($_POST["etun"], $_POST["sukun"],$_POST["as"],
+   $_POST["oj"] ));
    //Yhteyden poistaminen. Ei välttämättä tarvita
    $yhteys = null;
    
