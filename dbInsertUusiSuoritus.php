@@ -1,6 +1,29 @@
 <?php
 
-    $host = 'localhost';
+try {
+    $yhteys = new PDO("mysql:host=localhost;dbname=t7aaju00", "t7aaju00",
+   "salasana");
+   } catch (PDOException $e) {
+    die("VIRHE: " . $e->getMessage());
+   }
+   // virheenkäsittely: virheet aiheuttavat poikkeuksen
+   $yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   // merkistö: käytetään latin1-merkistöä; toinen yleinen vaihtoehto on utf8.
+   $yhteys->exec("SET NAMES latin1");
+   $kysely = $yhteys->prepare("INSERT INTO Opiskelija
+   (Etunimi,Sukunimi,Osoite,Luokkatunnus) VALUES (?, ?, ?, ?)");
+   $kysely->execute(array($_POST["etun"], $_POST["sukun"],$_POST["os"],
+   $_POST["lt"] ));
+   //Yhteyden poistaminen. Ei välttämättä tarvita
+   $yhteys = null;
+   
+
+
+
+
+
+
+    /*$host = 'localhost';
     $dbname = 't7aaju00';
     $username = 't7aaju00';
     $password = 'salasana';
