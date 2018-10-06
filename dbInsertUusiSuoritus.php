@@ -7,7 +7,7 @@
 
     try
     {
-        $yhteys = new PDO("mysql: host=$host, dbname=$dbname, $username, $password");
+        $yhteys = new PDO("mysql: host=localhost; dbname=t7aaju00", "t7aaju00", "salasana");
     }
     catch(PDOException $e)
     {
