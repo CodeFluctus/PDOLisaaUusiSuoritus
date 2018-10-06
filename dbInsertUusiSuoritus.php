@@ -51,7 +51,7 @@ try {
     //valmistellaan proseduuri
 
     $proseduuri = $yhteys->prepare("CALL UusiSuoritus(?, ?, ?, ?)");
-    $proseduuri =$yhteys -> prepare("CALL UusiSuoritus($_POST["etun"], $_POST["sukun"], $_POST["oj"], $_POST["as"])";
+    //$proseduuri =$yhteys -> prepare("CALL UusiSuoritus($_POST["etun"], $_POST["sukun"], $_POST["oj"], $_POST["as"])";
 
     //Suoritetaan valmisteltu proserduuri
 
