@@ -22,13 +22,7 @@
     $yhteys ->exec ("SET NAMES latin1");
 
     //valmistellaan proseduuri
-
-    $etunimi = mysqli_real_escape_string($con, filter_input(INPUT_POST,'etun',FILTER_SANITIZE_STRING));
-    $sukunimi = mysqli_real_escape_string($con, filter_input(INPUT_POST,'sukun',FILTER_SANITIZE_STRING));
-    $opintojaksonKoodi = mysqli_real_escape_string($con,filter_input(INPUT_POST,'oj',FILTER_SANITIZE_STRING));
-    $arvosana = mysqli_real_escape_string($con, filter_input(INPUT_POST,'as',FILTER_SANITIZE_STRING));
-
-    $proseduuri =$yhteys -> prepare("CALL UusiSuoritus('$etunimi', '$sukunimi', '$opintojaksonKoodi', $arvosana)";
+    $proseduuri =$yhteys -> prepare("CALL UusiSuoritus($_POST["etun"], $_POST["sukun"], $_POST["oj"], $_POST["as"])";
 
     //Suoritetaan valmisteltu proserduuri
 
