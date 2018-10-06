@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Uusi suoritus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    
+<h3>Lisää uusi opiskelijan suoritus</h3>
+<p>Tällä lomakkeella voit lisätä tietokantaan
+    opiskelijalle uuden <br> suorituksen, johonkin tiettyyn
+    opintojaksoon.</p><br><br>
+
+<form id = "dataForm" action="dbInsertUusiSuoritus.php" method="POST">
+    <h3>Syötä seuraavat tiedot</h3>
+<Label>Etunimi:</Label> <br>
+<input type="text" name="etun"> <br>
+<Label>Sukunimi:</Label> <br>
+<input type="text" name="sukun"> <br>
+<Label>Opintojakson koodi:</Label> <br>
+<input type="text" name="oj"> <br>
+<Label>Arvosana:</Label> <br>
+<input type="number" name="as"><br><br>
+<button type="submit">Lisää merkintä
+
+</form>
+    
+</body>
+</html>
